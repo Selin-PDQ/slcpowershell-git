@@ -6,7 +6,7 @@ pipeline {
                 docker { image 'alpine:latest' }
             }
             steps {
-                ls
+                ls '/'
             }
         }
     }
