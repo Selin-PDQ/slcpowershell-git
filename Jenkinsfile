@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('running') {
+        stage('run') {
             steps {
-                get-childitem '-recurse'
+                powershell.exe -c 'get-childitem C:/'
             }
         }
     }
