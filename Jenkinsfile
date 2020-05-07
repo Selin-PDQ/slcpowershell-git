@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('run') {
             steps {
-                powershell 'get-childitem'
+                powershell '.\file.ps1'
             }
         }
     }
