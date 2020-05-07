@@ -1,16 +1,13 @@
 pipeline {
-    agent {
-        docker { 
-            image 'mcr.microsoft.com/powershell:latest' 
-            args '-v C:/Program Files (x86)/Jenkins/workspace/powershell/:/powershell'
-        }
-    }
+    agent none
     stages {
-        stage('Test') {
+        stage('testing') {
+            agent {
+                docker { image 'alpine:latest' }
+            }
             steps {
-                pwsh "Get-childitem -recurse"
+                ls
             }
         }
     }
-    
 }
