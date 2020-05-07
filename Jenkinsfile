@@ -1,12 +1,9 @@
 pipeline {
-    agent none
+    agent any
     stages {
-        stage('testing') {
-            agent {
-                docker { image 'alpine:latest' }
-            }
+        stage('running') {
             steps {
-                ls '/'
+                get-childitem '-recurse'
             }
         }
     }
